@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مروش - منصة المنشورات الرقمية الفاخرة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        dark: '#1A1A1A',
+                        light: '#F5F5F5',
+                    },
+                    fontFamily: {
+                        arabic: ['Tajawal', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #1A1A1A;
+            color: #F5F5F5;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(26,26,26,0.9) 0%, rgba(212,175,55,0.3) 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+        
+        .gold-border {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .gold-border:hover {
+            border: 1px solid rgba(212, 175, 55, 0.7);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .game-card {
+            background-size: cover;
+            background-position: center;
+            transition: all 0.3s ease;
+        }
+        
+        .game-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .gold-text-gradient {
+            background: linear-gradient(90deg, #D4AF37 0%, #F5F5F5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-black bg-opacity-90 fixed w-full z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-gold text-2xl font-bold">مروش</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4 space-x-reverse">
+                        <a href="#home" class="text-gold hover:text-white px-3 py-2 rounded-md text-sm font-medium">الرئيسية</a>
+                        <a href="#publications" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">المنشورات</a>
+                        <a href="#features" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">المميزات</a>
+                        <a href="#about" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">عن المنصة</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-95">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
+                <a href="#home" class="text-gold hover:text-white block px-3 py-2 rounded-md text-base font-medium">الرئيسية</a>
+                <a href="#publications" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">المنشورات</a>
+                <a href="#features" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">المميزات</a>
+                <a href="#about" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">عن المنصة</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-24 pb-12 md:pt-32 md:pb-20 flex items-center justify-center min-h-screen hero-gradient">
+        <!-- Background Game Images -->
+        <div class="absolute inset-0 overflow-hidden z-0">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+            <div class="absolute inset-0 flex items-center justify-center opacity-20">
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Game Background" class="w-full h-full object-cover">
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">
+                    <span class="gold-text-gradient">منصة مروش</span> للمنشورات الرقمية الفاخرة
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                    تجربة فريدة لعرض وبيع المنشورات الرقمية باحترافية وفخامة. منصة حصرية تمنحك السيطرة الكاملة على محتواك مع تصميم عصري يجذب الزوار.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#publications" class="bg-gold hover:bg-opacity-90 text-black font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+                        تصفح المنشورات
+                    </a>
+                    <a href="#features" class="bg-transparent hover:bg-white hover:bg-opacity-10 text-white font-bold py-3 px-6 rounded-lg border border-gold transition duration-300 transform hover:scale-105">
+                        اكتشف المميزات
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-16 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white mb-4">أحدث المنشورات</h2>
+                <div class="w-20 h-1 bg-gold mx-auto"></div>
+            </div>
+            
+            <!-- Filter Controls -->
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <button class="filter-btn active px-4 py-2 rounded-full bg-gold text-black font-medium" data-filter="all">الكل</button>
+                <button class="filter-btn px-4 py-2 rounded-full bg-transparent text-white border border-gold font-medium hover:bg-gold hover:text-black transition" data-filter="games">ألعاب</button>
+                <button class="filter-btn px-4 py-2 rounded-full bg-transparent text-white border border-gold font-medium hover:bg-gold hover:text-black transition" data-filter="software">برمجيات</button>
+                <button class="filter-btn px-4 py-2 rounded-full bg-transparent text-white border border-gold font-medium hover:bg-gold hover:text-black transition" data-filter="guides">إرشادات</button>
+            </div>
+            
+            <!-- Publications Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Publication 1 -->
+                <div class="publication-card games card-hover bg-gray-900 rounded-lg overflow-hidden shadow-lg gold-border">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Publication Image" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute top-4 left-4 bg-gold text-black text-sm font-bold px-2 py-1 rounded">#PUB001</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">دليل متقدم لألعاب RPG</h3>
+                        <p class="text-gray-400 mb-4">دليل شامل يحتوي على استراتيجيات متقدمة وخبايا الألعاب التي لم تكن تعرفها من قبل.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gold font-bold">$19.99</span>
+                            <a href="https://t.me/y_33s" class="bg-gold hover:bg-opacity-90 text-black font-bold py-2 px-4 rounded transition duration-300 flex items-center">
+                                <i class="fas fa-shopping-cart ml-2"></i>
+                                <span>شراء</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Publication 2 -->
+                <div class="publication-card software card-hover bg-gray-900 rounded-lg overflow-hidden shadow-lg gold-border">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517430816045-df4b7ac11cbb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Publication Image" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute top-4 left-4 bg-gold text-black text-sm font-bold px-2 py-1 rounded">#PUB002</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">حزمة أدوات المطور</h3>
+                        <p class="text-gray-400 mb-4">مجموعة من النصوص البرمجية والأدوات الجاهزة لتسريع عملية التطوير بمختلف اللغات.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gold font-bold">$29.99</span>
+                            <a href="https://t.me/y_33s" class="bg-gold hover:bg-opacity-90 text-black font-bold py-2 px-4 rounded transition duration-300 flex items-center">
+                                <i class="fas fa-shopping-cart ml-2"></i>
+                                <span>شراء</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Publication 3 -->
+                <div class="publication-card guides card-hover bg-gray-900 rounded-lg overflow-hidden shadow-lg gold-border">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Publication Image" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute top-4 left-4 bg-gold text-black text-sm font-bold px-2 py-1 rounded">#PUB003</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">إتقان التصميم الجرافيكي</h3>
+                        <p class="text-gray-400 mb-4">دليل شامل لاحتراف التصميم الجرافيكي من الصفر حتى الاحتراف مع أمثلة عملية.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gold font-bold">$24.99</span>
+                            <a href="https://t.me/y_33s" class="bg-gold hover:bg-opacity-90 text-black font-bold py-2 px-4 rounded transition duration-300 flex items-center">
+                                <i class="fas fa-shopping-cart ml-2"></i>
+                                <span>شراء</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Publication 4 -->
+                <div class="publication-card games card-hover bg-gray-900 rounded-lg overflow-hidden shadow-lg gold-border">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Publication Image" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute top-4 left-4 bg-gold text-black text-sm font-bold px-2 py-1 rounded">#PUB004</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">أسرار ألعاب البطولة</h3>
+                        <p class="text-gray-400 mb-4">اكتشف الأسرار التي يستخدمها المحترفون للفوز في بطولات الألعاب الإلكترونية.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gold font-bold">$17.99</span>
+                            <a href="https://t.me/y_33s" class="bg-gold hover:bg-opacity-90 text-black font-bold py-2 px-4 rounded transition duration-300 flex items-center">
+                                <i class="fas fa-shopping-cart ml-2"></i>
+                                <span>شراء</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Publication 5 -->
+                <div class="publication-card software card-hover bg-gray-900 rounded-lg overflow-hidden shadow-lg gold-border">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80" alt="Publication Image" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute top-4 left-4 bg-gold text-black text-sm font-bold px-2 py-1 rounded">#PUB005</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">أدوات الذكاء الاصطناعي</h3>
+                        <p class="text-gray-400 mb-4">مجموعة من الأدوات والبرمجيات المتقدمة في مجال الذكاء الاصطناعي والتعلم الآلي.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gold font-bold">$34.99</span>
+                            <a href="https://t.me/y_33s" class="bg-gold hover:bg-opacity-90 text-black font-bold py-2 px-4 rounded transition duration-300 flex items-center">
+                                <i class="fas fa-shopping-cart ml-2"></i>
+                                <span>شراء</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Publication 6 -->
+                <div class="publication-card guides card-hover bg-gray-900 rounded-lg overflow-hidden shadow-lg gold-border">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Publication Image" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute top-4 left-4 bg-gold text-black text-sm font-bold px-2 py-1 rounded">#PUB006</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">إدارة المشاريع الرقمية</h3>
+                        <p class="text-gray-400 mb-4">دليل عملي لإدارة المشاريع الرقمية بنجاح من التخطيط حتى التنفيذ والتسليم.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gold font-bold">$22.99</span>
+                            <a href="https://t.me/y_33s" class="bg-gold hover:bg-opacity-90 text-black font-bold py-2 px-4 rounded transition duration-300 flex items-center">
+                                <i class="fas fa-shopping-cart ml-2"></i>
+                                <span>شراء</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-transparent hover:bg-gold hover:text-black text-gold font-bold py-3 px-6 rounded-lg border border-gold transition duration-300 transform hover:scale-105">
+                    عرض المزيد
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-black bg-opacity-90">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white mb-4">مميزات منصة مروش</h2>
+                <div class="w-20 h-1 bg-gold mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-gray-900 rounded-lg p-6 gold-border hover:shadow-lg transition duration-300">
+                    <div class="text-gold text-4xl mb-4">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">نظام حصري</h3>
+                    <p class="text-gray-400">فقط صاحب الموقع يمكنه رفع ونشر المنشورات، مما يضمن أن كل المحتوى حقيقي وموثوق.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-gray-900 rounded-lg p-6 gold-border hover:shadow-lg transition duration-300">
+                    <div class="text-gold text-4xl mb-4">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">لوحة تحكم متقدمة</h3>
+                    <p class="text-gray-400">لوحة تحكم تتيح لك رفع المنشورات بسهولة، تعديلها، ترتيبها، وحذفها متى شئت.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-gray-900 rounded-lg p-6 gold-border hover:shadow-lg transition duration-300">
+                    <div class="text-gold text-4xl mb-4">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">ربط مباشر مع تلجرام</h3>
+                    <p class="text-gray-400">زر شراء ينقل الزائر مباشرة إلى حساب تلجرام الخاص بك مع رقم المنشور التلقائي.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-gray-900 rounded-lg p-6 gold-border hover:shadow-lg transition duration-300">
+                    <div class="text-gold text-4xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">إحصائيات مفصلة</h3>
+                    <p class="text-gray-400">تتبع عدد المشاهدات، نقرات الشراء، والأوقات الأكثر نشاطًا لتحسين أدائك.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-gray-900 rounded-lg p-6 gold-border hover:shadow-lg transition duration-300">
+                    <div class="text-gold text-4xl mb-4">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">تصميم متجاوب</h3>
+                    <p class="text-gray-400">الموقع يعمل بشكل مثالي على جميع الأجهزة من هواتف إلى أجهزة سطح المكتب.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-gray-900 rounded-lg p-6 gold-border hover:shadow-lg transition duration-300">
+                    <div class="text-gold text-4xl mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">أمان عالي</h3>
+                    <p class="text-gray-400">استضافة سريعة مع تشفير SSL، وحماية ضد الهجمات السيبرانية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="relative rounded-xl overflow-hidden h-96">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="About Murosh" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-white mb-6">عن منصة مروش</h2>
+                    <p class="text-gray-400 mb-4">
+                        مروش هو موقع إلكتروني مبتكر ومتقدم، يهدف إلى تقديم تجربة عرض وبيع المنشورات الرقمية بطريقة فخمة وعصرية، تجمع بين التصميم الراقي والوظائف العملية التي تضمن السيطرة الكاملة لصاحب المحتوى.
+                    </p>
+                    <p class="text-gray-400 mb-4">
+                        واجهة الموقع تجمع بين الفخامة والعصرية، حيث تستخدم ألوان راقية مثل الأسود، الذهبي، والأبيض مع تأثيرات متحركة أنيقة تجعل تجربة التصفح ممتعة ومرنة.
+                    </p>
+                    <p class="text-gray-400 mb-6">
+                        تشمل الواجهة الخلفية صورًا عالية الجودة لألعاب فيديو شهيرة، تضفي جواً من الحماس والتميز، وتجعل الموقع جذابًا للمستخدمين المهتمين بالعالم الرقمي والألعاب.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <div class="bg-gold bg-opacity-20 p-2 rounded-full mr-3">
+                                <i class="fas fa-check text-gold"></i>
+                            </div>
+                            <span class="text-white">تصميم فاخر وعصري</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-gold bg-opacity-20 p-2 rounded-full mr-3">
+                                <i class="fas fa-check text-gold"></i>
+                            </div>
+                            <span class="text-white">نظام إدارة محتوى حصري</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-gold bg-opacity-20 p-2 rounded-full mr-3">
+                                <i class="fas fa-check text-gold"></i>
+                            </div>
+                            <span class="text-white">ربط مباشر مع تلجرام</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-gold bg-opacity-20 p-2 rounded-full mr-3">
+                                <i class="fas fa-check text-gold"></i>
+                            </div>
+                            <span class="text-white">أمان وسرعة عالية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-gold to-gold-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-black mb-6">جاهز لبيع منشوراتك الرقمية باحترافية؟</h2>
+            <p class="text-black mb-8 max-w-3xl mx-auto">انضم إلى منصة مروش واستمتع بتجربة فريدة لعرض وبيع محتواك الرقمي بطريقة فاخرة وآمنة.</p>
+            <a href="https://t.me/y_33s" class="bg-black hover:bg-opacity-90 text-gold font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 inline-flex items-center">
+                <i class="fab fa-telegram-plane text-xl ml-2"></i>
+                تواصل معنا على تلجرام
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">مروش</h3>
+                    <p class="text-gray-400">منصة عرض وبيع احترافية وفاخرة للمنشورات الرقمية.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-gold transition">الرئيسية</a></li>
+                        <li><a href="#publications" class="text-gray-400 hover:text-gold transition">المنشورات</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-gold transition">المميزات</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-gold transition">عن المنصة</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">تواصل معنا</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fab fa-telegram text-gold mr-2"></i>
+                            <a href="https://t.me/y_33s" class="text-gray-400 hover:text-gold transition">تلجرام</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gold mr-2"></i>
+                            <span class="text-gray-400">info@murosh.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">اشترك في النشرة البريدية</h4>
+                    <form class="flex flex-col">
+                        <input type="email" placeholder="بريدك الإلكتروني" class="bg-gray-900 text-white px-4 py-2 rounded mb-2 focus:outline-none focus:ring-2 focus:ring-gold">
+                        <button type="submit" class="bg-gold hover:bg-opacity-90 text-black font-bold py-2 px-4 rounded transition">اشترك</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2023 مروش. جميع الحقوق محفوظة.</p>
+                <div class="flex space-x-6 space-x-reverse mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-gold">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gold">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gold">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gold">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Filter publications
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const publicationCards = document.querySelectorAll('.publication-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active', 'bg-gold', 'text-black'));
+                filterButtons.forEach(btn => btn.classList.add('bg-transparent', 'text-white', 'border', 'border-gold'));
+                
+                // Add active class to clicked button
+                button.classList.add('active', 'bg-gold', 'text-black');
+                button.classList.remove('bg-transparent', 'text-white', 'border', 'border-gold');
+                
+                const filter = button.getAttribute('data-filter');
+                
+                publicationCards.forEach(card => {
+                    if (filter === 'all' || card.classList.contains(filter)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Track buy button clicks (simulated)
+        const buyButtons = document.querySelectorAll('a[href="https://t.me/y_33s"]');
+        buyButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const publicationId = this.closest('.publication-card').querySelector('.absolute.top-4').textContent;
+                console.log(`تم النقر على زر شراء للمنشور: ${publicationId}`);
+                // في الواقع، هنا يمكنك إضافة كود لإرسال البيانات إلى قاعدة البيانات
+            });
+        });
+    </script>
+</body>
+</html>
